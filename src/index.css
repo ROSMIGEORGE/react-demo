@@ -1,0 +1,205 @@
+html{
+    background:#1b1515;
+}
+#root{
+    font-family: 'Roboto', sans-serif;
+    color: #ece3e3;
+    font-size: 15px;
+}
+.real-name{
+    font-size: 16px;
+    font-weight: 600;
+}
+.time-zone{
+    font-size: 11px;
+    font-weight: 300;
+}
+.user-title{
+    margin: 15px 0px;
+    font-weight: 600;
+    font-size: 25px;
+}
+.userdetails-wrapper{
+    margin: auto;
+    margin-top: 50px;
+    width: 25%;
+    text-align: center;
+    padding: 20px 25px;
+    border-radius: 4px;
+    box-shadow: 0px 4px 9px rgba(0, 0, 0, 0.8);
+  }
+
+.user-tab{
+    overflow: auto;
+    padding: 10px;
+    border-bottom: 1px solid #463d3d;
+    cursor: pointer;
+}
+.user-tab:hover{
+    box-shadow: 0px 4px 9px rgba(0, 0, 0, 0.8);
+    border-radius: 4px;
+    border-bottom: none;
+    border-top: 1px solid #463d3d;
+}
+.user-tab:nth-last-child(1) {
+    border-bottom: none;
+  }
+.tab-w-8{
+    width: 80%;
+    float: left;
+}
+.tab-w-2{
+    width: 20%;
+    float: left;
+}
+.user-data{
+    text-align: left;
+}
+.activity-link{
+    text-align: right;
+}
+
+.to{
+    position: relative;
+    top: -43px;
+}
+.to-btn{
+    height: 30px;
+    width: 30px;
+    border-radius: 50%;
+    margin: auto;
+    line-height: 43px;
+    background: #000;
+    box-shadow: 0px 4px 9px rgba(0, 0, 0, 0.8);
+}
+.time-section{
+    overflow: auto;
+    width: 60%;
+    border-right: 1px solid #ece3e3;
+    height: 100%;
+    /* position: absolute; */
+    float: left;
+}
+.date-section{
+    width: 39%;
+    float: left;
+}
+.time-wrapper{
+    overflow: auto;
+    margin: auto;
+    padding: 10px;
+}
+.date-time-wrapper{
+    height: 100%;
+    overflow: auto;
+    position: absolute;
+    width: 100%;
+}
+/*date component css*/
+.day-btn{
+    height: 35px;
+    width: 35px;
+    float: left;
+    line-height: 35px;
+    border-radius: 50%;
+}
+.day-btn:hover{
+    box-shadow: 0px 4px 9px rgba(0, 0, 0, 0.8);
+    cursor: pointer;
+}
+.day-btn.selected{
+    background: black;
+    box-shadow: 0px 4px 9px rgba(0, 0, 0, 0.8);
+}
+.calender-wrapper{
+    width: 250px;
+    margin: auto;
+    padding: 10px;
+}
+.nav-arrow{
+    width: 30px;
+    height: 30px;
+    top: 6px;
+    position: relative;
+}
+.nav-arrow:hover{
+    border-radius: 4px;
+    box-shadow: 0px 4px 9px rgba(0, 0, 0, 0.8);
+    cursor: pointer;
+}
+.date-display{
+    height: 30px;
+    line-height: 30px;
+}
+/*time component css*/
+.time-btn-wrapper{
+    margin: auto;
+    width: fit-content;
+    overflow: auto;
+}
+.time-btn{
+    width: 70px;
+    padding: 10px;
+    float: left;
+    border-radius: 4px;
+    box-shadow: 0px 4px 9px rgba(0, 0, 0, 0.8);
+    margin: 10px;
+}
+/* modal css */
+.modal{
+    position: fixed;
+    background-color: rgba(255, 255, 255, 0.25);
+    z-index: 999;
+    pointer-events: none;
+    transition: all 0.3s;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    pointer-events: fill;
+    animation: modalFadeIn .5s cubic-bezier(0.165, 0.840, 0.440, 1.000) forwards;
+}
+@keyframes modalFadeIn {
+    0% {
+      background-color:transparent;
+    }
+    100% {
+      background-color:rgba(255, 255, 255, 0.25);
+    }
+  }
+.inner-modal{
+    background: rgba(70, 61, 61, 1);
+    min-height: 400px;
+    margin: 10% 20%;
+    border-radius: 4px;
+    box-shadow: 0px 4px 9px rgba(0, 0, 0, 0.8);
+    position: relative;
+}
+.modal-close{
+    right: 10px;
+    position: absolute;
+    top: 10px;
+    z-index: 10000;
+    cursor: pointer;
+}
+@media only screen and (max-width: 600px) {
+    .userdetails-wrapper{
+        width:95%;
+    }
+    .inner-modal{
+        background: rgba(70, 61, 61, 1);
+        height: 100%;
+        margin: 10px;
+        border-radius: 4px;
+        box-shadow: 0px 4px 9px rgba(0, 0, 0, 0.8);
+    
+    }
+    .time-section{
+        width: 100%;
+    }
+  }
+
+
+
+
+
