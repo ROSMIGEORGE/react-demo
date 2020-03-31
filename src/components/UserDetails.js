@@ -1,12 +1,14 @@
 import React,{Component} from 'react';
 import axios from 'axios'
 import UserTab from './UserTab';
+import LinearProgress from '@material-ui/core/LinearProgress';
 
 class UserDetails extends Component{
     constructor(props){
         super(props);
         this.state = {
-            users: []
+            users: [],
+            success: false
         }
     }
 
@@ -15,7 +17,8 @@ class UserDetails extends Component{
         .then(response => {
             let responseData = response.data;
             this.setState({
-                users: responseData.data.members
+                users: responseData.data.members,
+                success: true
             });
         })
         .catch(error => {
@@ -24,6 +27,7 @@ class UserDetails extends Component{
     }
     render(){
         const {users} = this.state;
+        if(this.state.success){
         return(
             <div className="userdetails-wrapper">
                 <div className="user-title">User Details</div>
@@ -36,6 +40,11 @@ class UserDetails extends Component{
                 </div>
             </div>
         );
+    }else{
+        return(
+        <LinearProgress color="secondary"></LinearProgress>
+        );
+    }
     }
 }
 

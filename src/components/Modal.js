@@ -58,7 +58,7 @@ class Modal extends Component {
                         <div className="modal-close" onClick={this.props.hideModal}><span className="material-icons">close</span></div>
                         <div className="date-time-wrapper">
                             <div className="time-section">
-                                {this.state.timeList.length? <div>ACTIVITY LIST</div>:<div key={1}>NO ACTIVITY FOUND</div>}
+                                {this.state.timeList.length? <div className="activity-list">ACTIVITY LIST</div>:<div key={1} className="no-activity"><div>NO ACTIVITY FOUND</div><div><span class="material-icons">work_off</span></div></div>}
                                 <div>
                                 {this.state.timeList}
                                 </div>

@@ -1,6 +1,12 @@
 html{
     background:#1b1515;
 }
+.MuiLinearProgress-root {
+    top: 50vh;
+    background: #ece3e3;
+    width: 500px;
+    margin: auto
+}
 #root{
     font-family: 'Roboto', sans-serif;
     color: #ece3e3;
@@ -95,6 +101,11 @@ html{
     position: absolute;
     width: 100%;
 }
+.no-activity{
+    position: relative;
+    top: 49%;
+    font-size: 25px;
+}
 /*date component css*/
 .day-btn{
     height: 35px;
@@ -115,6 +126,8 @@ html{
     width: 250px;
     margin: auto;
     padding: 10px;
+    overflow: auto;
+    margin-top: 30%;
 }
 .nav-arrow{
     width: 30px;
@@ -145,6 +158,17 @@ html{
     box-shadow: 0px 4px 9px rgba(0, 0, 0, 0.8);
     margin: 10px;
 }
+.userdetails-wrapper{
+    animation: modalFadeInWrapper 2s cubic-bezier(0.165, 0.840, 0.440, 1.000) forwards;
+}
+@keyframes modalFadeInWrapper {
+    0% {
+      background-color:transparent;
+    }
+    100% {
+      background-color:#1b1515;
+    }
+  }
 /* modal css */
 .modal{
     position: fixed;
@@ -182,6 +206,13 @@ html{
     z-index: 10000;
     cursor: pointer;
 }
+.activity-list{
+    margin-top: 35px;
+}
+.mm-yyyy{
+    display: inline-block;
+    width: 130px;
+}
 @media only screen and (max-width: 600px) {
     .userdetails-wrapper{
         width:95%;
@@ -192,10 +223,24 @@ html{
         margin: 10px;
         border-radius: 4px;
         box-shadow: 0px 4px 9px rgba(0, 0, 0, 0.8);
+        margin-right: 10px;
     
     }
     .time-section{
         width: 100%;
+        border-right: none;
+    }
+    .date-time-wrapper{
+        display: flex;
+        flex-direction: column-reverse;
+    }
+    .date-section{
+        width: 100%;
+        border-radius: 4px;
+        box-shadow: 0px 4px 9px rgba(0, 0, 0, 0.8);
+    }
+    .calender-wrapper{
+        margin-top: 50px;
     }
   }
 

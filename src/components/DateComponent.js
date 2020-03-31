@@ -109,7 +109,7 @@ class DateComponent extends Component {
         const monthList = ['JANUARY', 'FEBRUARY', 'MARCH', 'APRIL', 'MAY', 'JUNE', 'JULY', 'AUGUST', 'SEPTEMBER','OCTOBER', 'NOVEMBER', 'DECEMBER']
         return (
             <div className="calender-wrapper">
-                <div className="date-display"><span className="material-icons nav-arrow" onClick={this.leftUpdate}>navigate_before</span> <span>{monthList[month]}, {year}</span> <span className="material-icons nav-arrow" onClick={this.rightUpdate}>navigate_next</span></div>
+                <div className="date-display"><span className="material-icons nav-arrow" onClick={this.leftUpdate}>navigate_before</span> <span className="mm-yyyy">{monthList[month]}, {year}</span> <span className="material-icons nav-arrow" onClick={this.rightUpdate}>navigate_next</span></div>
                 <div>{dayList}</div>
             </div>
         );
