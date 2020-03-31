@@ -16,6 +16,18 @@
                         "end_time": "Mar 1 2020 2:00PM"
                     },
                     {
+                        "start_time": "Mar 31 2020  5:33PM",
+                        "end_time": "Mar 31 2020 8:02PM"
+                    },
+                    {
+                        "start_time": "Jan 1 2020  1:33PM",
+                        "end_time": "Jan 1 2020 1:54PM"
+                    },
+                    {
+                        "start_time": "Mar 31 2020  11:11AM",
+                        "end_time": "Mar 31 2020 2:00PM"
+                    },
+                    {
                         "start_time": "Mar 16 2020  5:33PM",
                         "end_time": "Mar 16 2020 8:02PM"
                     }
@@ -37,6 +49,62 @@
                     {
                         "start_time": "Mar 16 2020  5:33PM",
                         "end_time": "Mar 16 2020 8:02PM"
+                    }
+                ]
+            },{
+                "id": "W07QCRPA5",
+                "real_name": "Jeff Bezos",
+                "tz": "Asia/Kolkata",
+                "activity_periods": [
+                    {
+                        "start_time": "Feb 1 2020  1:33PM",
+                        "end_time": "Feb 1 2020 1:54PM"
+                    },
+                    {
+                        "start_time": "Mar 31 2020  11:11AM",
+                        "end_time": "Mar 31 2020 2:00PM"
+                    },
+                    {
+                        "start_time": "Mar 31 2020  5:33PM",
+                        "end_time": "Mar 31 2020 8:02PM"
+                    }
+                ]
+            },
+            {
+                "id": "W07QCRPA6",
+                "real_name": "Larry Ellison",
+                "tz": "America/Los_Angeles",
+                "activity_periods": [
+                    {
+                        "start_time": "Apr 1 2020  1:33PM",
+                        "end_time": "Apr 1 2020 1:54PM"
+                    },
+                    {
+                        "start_time": "Mar 31 2020  11:11AM",
+                        "end_time": "Mar 31 2020 2:00PM"
+                    },
+                    {
+                        "start_time": "Mar 31 2020  5:33PM",
+                        "end_time": "Mar 31 2020 8:02PM"
+                    }
+                ]
+            },
+            {
+                "id": "W07QCRPA7",
+                "real_name": "Steve Ballmer",
+                "tz": "America/California",
+                "activity_periods": [
+                    {
+                        "start_time": "Jan 5 2020  1:33PM",
+                        "end_time": "Jan 5 2020 1:54PM"
+                    },
+                    {
+                        "start_time": "Mar 31 2020  11:11AM",
+                        "end_time": "Mar 31 2020 2:00PM"
+                    },
+                    {
+                        "start_time": "Mar 31 2020  5:33PM",
+                        "end_time": "Mar 31 2020 8:02PM"
                     }
                 ]
             }
