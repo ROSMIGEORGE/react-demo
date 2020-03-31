@@ -13,8 +13,9 @@ class UserDetails extends Component{
     componentDidMount(){
         axios.get('https://hnswu6rm5g.execute-api.us-east-2.amazonaws.com/beta')
         .then(response => {
+            let responseData = response.data;
             this.setState({
-                users: response.data.members
+                users: responseData.data.members
             });
         })
         .catch(error => {
