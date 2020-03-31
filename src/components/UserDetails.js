@@ -11,7 +11,7 @@ class UserDetails extends Component{
     }
 
     componentDidMount(){
-        axios.get('http://localhost:3000/data')
+        axios.get('https://hnswu6rm5g.execute-api.us-east-2.amazonaws.com/beta')
         .then(response => {
             this.setState({
                 users: response.data.members
