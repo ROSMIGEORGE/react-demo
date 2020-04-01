@@ -18,10 +18,7 @@ html{
     font-size: 16px;
     font-weight: 600;
 }
-.time-zone{
-    font-size: 11px;
-    font-weight: 300;
-}
+
 .user-title{
     margin: 15px 0px;
     font-weight: 600;
@@ -67,47 +64,64 @@ html{
     text-align: right;
 }
 
-.to{
-    position: relative;
-    top: -43px;
+
+
+.userdetails-wrapper{
+    animation: userFadeInWrapper 2s cubic-bezier(0.165, 0.840, 0.440, 1.000) forwards;
 }
-.to-btn{
-    height: 30px;
-    width: 30px;
-    border-radius: 50%;
-    margin: auto;
-    line-height: 43px;
-    background: #000;
+@keyframes userFadeInWrapper {
+    0% {
+      background-color:transparent;
+    }
+    100% {
+      background-color:#1b1515;
+    }
+  }
+
+/* Modal Section */
+.modal{
+    position: fixed;
+    background-color: rgba(255, 255, 255, 0.25);
+    z-index: 999;
+    pointer-events: none;
+    transition: all 0.3s;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    pointer-events: fill;
+    animation: modalFadeIn .5s cubic-bezier(0.165, 0.840, 0.440, 1.000) forwards;
+}
+@keyframes modalFadeIn {
+    0% {
+      background-color:transparent;
+    }
+    100% {
+      background-color:rgba(255, 255, 255, 0.25);
+    }
+  }
+
+.inner-modal{
+    background: #1b1515;;
+    min-height: 400px;
+    margin: 10% 20%;
+    border-radius: 4px;
     box-shadow: 0px 4px 9px rgba(0, 0, 0, 0.8);
-}
-.time-section{
-    overflow: auto;
-    width: 60%;
-    border-right: 1px solid #71e4ce;;
-    height: 100%;
-    /* position: absolute; */
-    float: left;
-}
-.date-section{
-    width: 39%;
-    float: left;
-}
-.time-wrapper{
-    margin: auto;
-    padding: 10px;
-    height: 45px;
-}
-.date-time-wrapper{
-    height: 100%;
-    overflow: auto;
-    position: absolute;
-    width: 100%;
-}
-.no-activity{
     position: relative;
-    top: 49%;
-    font-size: 25px;
 }
+
+.modal-close{
+    right: 10px;
+    position: absolute;
+    top: 10px;
+    z-index: 10000;
+    cursor: pointer;
+}
+
+.activity-list{
+    margin-top: 35px;
+}
+
 /*date component css*/
 .day-btn{
     height: 35px;
@@ -146,6 +160,21 @@ html{
     height: 30px;
     line-height: 30px;
 }
+.mm-yyyy{
+    display: inline-block;
+    width: 130px;
+}
+.date-section{
+    width: 39%;
+    float: left;
+}
+.date-time-wrapper{
+    height: 100%;
+    overflow: auto;
+    position: absolute;
+    width: 100%;
+}
+
 /*time component css*/
 .time-btn-wrapper{
     margin: auto;
@@ -160,62 +189,45 @@ html{
     box-shadow: 0px 4px 9px rgba(0, 0, 0, 0.8);
     margin: 10px;
 }
-.userdetails-wrapper{
-    animation: modalFadeInWrapper 2s cubic-bezier(0.165, 0.840, 0.440, 1.000) forwards;
-}
-@keyframes modalFadeInWrapper {
-    0% {
-      background-color:transparent;
-    }
-    100% {
-      background-color:#1b1515;
-    }
-  }
-/* modal css */
-.modal{
-    position: fixed;
-    background-color: rgba(255, 255, 255, 0.25);
-    z-index: 999;
-    pointer-events: none;
-    transition: all 0.3s;
-    top: 0;
-    bottom: 0;
-    left: 0;
-    right: 0;
-    pointer-events: fill;
-    animation: modalFadeIn .5s cubic-bezier(0.165, 0.840, 0.440, 1.000) forwards;
-}
-@keyframes modalFadeIn {
-    0% {
-      background-color:transparent;
-    }
-    100% {
-      background-color:rgba(255, 255, 255, 0.25);
-    }
-  }
-.inner-modal{
-    background: #1b1515;;
-    min-height: 400px;
-    margin: 10% 20%;
-    border-radius: 4px;
-    box-shadow: 0px 4px 9px rgba(0, 0, 0, 0.8);
+.no-activity{
     position: relative;
+    top: 49%;
+    font-size: 25px;
 }
-.modal-close{
-    right: 10px;
-    position: absolute;
-    top: 10px;
-    z-index: 10000;
-    cursor: pointer;
+.to{
+    position: relative;
+    top: -43px;
 }
-.activity-list{
-    margin-top: 35px;
+.to-btn{
+    height: 30px;
+    width: 30px;
+    border-radius: 50%;
+    margin: auto;
+    line-height: 43px;
+    background: #000;
+    box-shadow: 0px 4px 9px rgba(0, 0, 0, 0.8);
 }
-.mm-yyyy{
-    display: inline-block;
-    width: 130px;
+.time-section{
+    overflow: auto;
+    width: 60%;
+    border-right: 1px solid #71e4ce;;
+    height: 100%;
+    float: left;
 }
+.time-wrapper{
+    margin: auto;
+    padding: 10px;
+    height: 45px;
+}
+.time-zone{
+    font-size: 11px;
+    font-weight: 300;
+}
+/* Media screen styles*/
 @media only screen and (max-width: 600px) {
+    #root {
+        margin-right: 12%;
+    }
     .userdetails-wrapper{
         width:95%;
     }

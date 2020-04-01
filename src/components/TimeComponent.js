@@ -1,5 +1,6 @@
 import React from 'react';
 
+//components to display date range
 function TimeComponent(props) {
     return (
         <div className="time-wrapper">

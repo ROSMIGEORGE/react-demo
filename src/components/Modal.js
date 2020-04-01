@@ -13,6 +13,7 @@ class Modal extends Component {
         }
     }
 
+    //returns list of active hours for selected date
     getTimeList = ()=> {
         let itemDate, tag, start, end;
         let dateSelected = this.state.dateSelected;
@@ -21,9 +22,9 @@ class Modal extends Component {
             isAvailable: false,
             timeList: []
         });
-        this.state.activityDetails.map((item, key) => {
+        this.state.activityDetails.forEach((item, key) => {
             itemDate = new Date(item.start_time.slice(0, -2));
-            if (itemDate.getDate() === dateSelected.getDate() && itemDate.getMonth() === dateSelected.getMonth() && itemDate.getFullYear() == dateSelected.getFullYear()) {
+            if (itemDate.getDate() === dateSelected.getDate() && itemDate.getMonth() === dateSelected.getMonth() && itemDate.getFullYear() === dateSelected.getFullYear()) {
                 start = item.start_time.slice(-6, -2) + ' ' + item.start_time.slice(-2);
                 end = item.end_time.slice(-6, -2) + ' ' + item.end_time.slice(-2);
                 tag = <TimeComponent key={key} start={start} end={end}></TimeComponent>
@@ -45,8 +46,8 @@ class Modal extends Component {
             this.getTimeList();
         });
     }
+    
     componentDidMount() {
-        console.log(this.state.dateSelected);
         this.getTimeList();
     }
         
@@ -58,7 +59,7 @@ class Modal extends Component {
                         <div className="modal-close" onClick={this.props.hideModal}><span className="material-icons">close</span></div>
                         <div className="date-time-wrapper">
                             <div className="time-section">
-                                {this.state.timeList.length? <div className="activity-list">ACTIVITY LIST</div>:<div key={1} className="no-activity"><div>NO ACTIVITY FOUND</div><div><span class="material-icons">work_off</span></div></div>}
+                                {this.state.timeList.length? <div className="activity-list">ACTIVITY LIST</div>:<div key={1} className="no-activity"><div>NO ACTIVITY FOUND</div><div><span className="material-icons">work_off</span></div></div>}
                                 <div>
                                 {this.state.timeList}
                                 </div>
