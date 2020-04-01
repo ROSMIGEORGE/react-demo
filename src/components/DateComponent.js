@@ -16,21 +16,31 @@ class DateComponent extends Component {
     }
 
     // function sets list of dates to be displayed
-    getDateList = (currentDate) => {
-        let dayList = [];
-        let tag, className;
-        let key = 0, day;
-        let currentMonth = currentDate.getMonth();
-        let startDay = currentDate.getDay();
-        let dateSelected = this.props.dateSelected;
-        for (let i = 0; i < startDay; i++) {
+    getDateList = (InputDate) => {
+        let dayList = []
+            ,tag
+            ,className
+            ,key = 0
+            ,day
+            ,currentDate = InputDate;
+        
+        const c_date = {
+            day: InputDate.getDay(),
+            dd: InputDate.getDate(),
+            mm: InputDate.getMonth(),
+            yy: InputDate.getFullYear()
+        };
+        const dateSelected = this.props.dateSelected;
+
+        for (let i = 0; i < c_date.day; i++) {
             tag = <div key={key} className="disabled-btn"></div>
             dayList.push(tag);
             key++;
         }
-        while (currentDate.getMonth() === currentMonth) {
+
+        while (currentDate.getMonth() === c_date.mm) {
             day = currentDate.getDate();
-            if (dateSelected.getDate() === day && dateSelected.getMonth() === currentMonth && dateSelected.getFullYear() === currentDate.getFullYear()) {
+            if (dateSelected.getDate() === day && dateSelected.getMonth() === c_date.mm && dateSelected.getFullYear() === c_date.yy) {
                 className = 'day-btn selected';
             }
             else {
@@ -46,7 +56,6 @@ class DateComponent extends Component {
             key++;
             currentDate.setDate(currentDate.getDate() + 1);
         }
-        currentDate.setDate(currentDate.getDate() - 1);
         this.setState({
             dayList: dayList
         });
