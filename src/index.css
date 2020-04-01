@@ -138,6 +138,14 @@ html{
     background: black;
     box-shadow: 0px 4px 9px rgba(0, 0, 0, 0.8);
 }
+.disabled-btn{
+    height: 35px;
+    width: 35px;
+    float: left;
+    line-height: 35px;
+    border-radius: 50%;
+    color: #4b5a51;
+}
 .calender-wrapper{
     width: 250px;
     margin: auto;

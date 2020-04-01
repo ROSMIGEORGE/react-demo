@@ -1,5 +1,7 @@
 import React, { Component } from 'react'
 
+const TODAY = new Date();
+
 class DateComponent extends Component {
     constructor(props) {
         super(props);
@@ -21,8 +23,9 @@ class DateComponent extends Component {
         let currentMonth = currentDate.getMonth();
         let startDay = currentDate.getDay();
         let dateSelected = this.props.dateSelected;
+        let lastMonth = (TODAY.getMonth() ===  currentDate.getMonth()&& TODAY.getFullYear() === currentDate.getFullYear());
         for (let i = 0; i < startDay; i++) {
-            tag = <div key={key} className="day-btn"></div>
+            tag = <div key={key} className="disabled-btn"></div>
             dayList.push(tag);
             key++;
         }
@@ -34,7 +37,12 @@ class DateComponent extends Component {
             else {
                 className = 'day-btn';
             }
-            tag = <div key={key} className={className} day={day} onClick={this.updateDate}>{day}</div>
+            if (lastMonth && day > TODAY.getDate()) {
+                tag = <div key={key} className="disabled-btn" day={day} >{day}</div>
+            }
+            else {
+                tag = <div key={key} className={className} day={day} onClick={this.updateDate}>{day}</div>
+            }
             dayList.push(tag);
             key++;
             currentDate.setDate(currentDate.getDate() + 1);
@@ -119,7 +127,10 @@ class DateComponent extends Component {
         const monthList = ['JANUARY', 'FEBRUARY', 'MARCH', 'APRIL', 'MAY', 'JUNE', 'JULY', 'AUGUST', 'SEPTEMBER', 'OCTOBER', 'NOVEMBER', 'DECEMBER']
         return (
             <div className="calender-wrapper">
-                <div className="date-display"><span className="material-icons nav-arrow" onClick={this.leftUpdate}>navigate_before</span> <span className="mm-yyyy">{monthList[month]}, {year}</span> <span className="material-icons nav-arrow" onClick={this.rightUpdate}>navigate_next</span></div>
+                <div className="date-display"><span className="material-icons nav-arrow" onClick={this.leftUpdate}>navigate_before</span>
+                    <span className="mm-yyyy">{monthList[month]}, {year}</span>
+                    {(TODAY.getMonth() === month && TODAY.getFullYear() === year)? null : <span className="material-icons nav-arrow" onClick={this.rightUpdate}>navigate_next</span>}
+                </div>
                 <div>{dayList}</div>
             </div>
         );
