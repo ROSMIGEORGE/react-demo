@@ -5,8 +5,6 @@
 
 ## General info
 Simple responsive website populated with data from integrated rest service created using react.
-
-website url: https://master.d1jgy473j5o2mk.amplifyapp.com/
 	
 ## Technologies
 Project is created with:
